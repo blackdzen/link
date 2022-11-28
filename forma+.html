@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <title>Forma+</title>
+</head>
+
+<body>
+  <header class="mb-5">
+    <div class="container-fluid position-fixed top-0 start-0">
+      <nav class="navbar shadow">
+        <a class="navbar-brand text-white fs-3" href="#">
+          <img class="rounded" src="./img/logo.png" alt="" width="30" height="30">
+          Forma+
+        </a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- Поле ввода комментария к заявке и Сипала-->
+    <div class="container pt-5">
+      <div class="row justify-content-center mb-5">
+        <div class="col-6">
+          <div class="form-floating">
+            <textarea class="form-control shadow" placeholder="Leave a comment here" id="commentField"
+              style="height: 200px" outputorder="12"></textarea>
+            <label for="commentField">Комментарий к заявке...</label>
+          </div>
+        </div>
+        <div class="col-6 sipal-comment-field visually-hidden">
+          <div class="form-floating">
+            <textarea class="form-control shadow" placeholder="Leave a comment here" id="sipalField"
+              style="height: 200px" outputorder="11"></textarea>
+            <label for="sipalField">Комментарий для Сипала...</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Форма для выезда -->
+    <div class="container border shadow rounded mb-5 formplus__container p-3 move-form visually-hidden">
+      <!-- Тема выезда -->
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <p class="fs-5 rounded p-2 mb-3 d-inline-block formplus__annotation">Тема выезда:
+          </p>
+          <select class="form-select shadow fs-5 move-form__theme" aria-label="Тема выезда: " outputorder="15">
+            <option selected value=""></option>
+            <option disabled value="">
+              -= СРЕ =-
+            </option>
+            <option value="{ Замена CAM-модуля/смарткарты }">Замена CAM-модуля/смарткарты</option>
+            <option value="{ Не работает через PLC/видеосендеры }">Не работает через PLC/видеосендеры
+            </option>
+            <option value="{ Замена ONT, в связи с ТП > 100 Мбит/с }">Замена ONT, в связи с ТП &gt; 100
+              Мбит/с</option>
+            <option value="{ Нет индикации STB/ресивере }">Нет индикации STB/ресивере</option>
+            <option value="{ Не загружается STB(красно-зеленый индикатор HD mini) }">Не загружается
+              STB(красно-зеленый индикатор HD mini)</option>
+            <option value="{ Нет индикации на ONT, ADSL /DOCSIS модеме }">Нет индикации на ONT, ADSL
+              /DOCSIS модеме</option>
+            <option value="{ Нет индикации на роутере/свитче }">Нет индикации на роутере/свитче</option>
+            <option disabled value="">
+              -= Internet =-
+            </option>
+            <option value="{ Прерывается сессия }">Прерывается сессия</option>
+            <option value="{ Проверка линии на возможность увеличения ТП ADSL }">Проверка линии на
+              возможность увеличения ТП ADSL</option>
+            <option value="{ Низкая скорость напрямую }">Низкая скорость напрямую</option>
+            <option value="{ Нет сессии. Требуется настройка CPE }">Нет сессии. Требуется настройка CPE
+            </option>
+            <option value="{ Есть сессия. Требуется настройка CPE }">Есть сессия. Требуется настройка CPE
+            </option>
+            <option
+              value="{ Есть сессия - не открываются страницы, диагностику не выполнить клиент слабый пользователь, отказывается от выполнения действий }">
+              Есть сессия - не открываются страницы, диагностику не выполнить клиент слабый пользователь,
+              отказывается от выполнения действий</option>
+            <option
+              value="{ Нет сессии -  настройку не выполнить клиент слабый пользователь, отказывается от выполнения действий }">
+              Нет сессии - настройку не выполнить клиент слабый пользователь, отказывается от выполнения
+              действий </option>
+            <option disabled value="">
+              -= IPTV =-
+            </option>
+            <option value="{ Замена ПДУ }">Замена ПДУ</option>
+            <option value="{ STB не реагирует на ПДУ }">STB не реагирует на ПДУ</option>
+            <option
+              value="{ Не загружается STB (ошибки нет IP-адреса, загрузка модулей ядра, сетевой интерфейс не подключен, не принимает логин/пароль) }">
+              Не загружается STB (ошибки нет IP-адреса, загрузка модулей ядра, сетевой интерфейс не
+              подключен, не принимает логин/пароль)</option>
+            <option value="{ Нет сигнала на ТВ }">Нет сигнала на ТВ</option>
+            <option value="{ Низкое качество изображения/рассыпания картинки }">Низкое качество
+              изображения/рассыпания картинки</option>
+            <option value="{ Отсутствие/низкое качество звука }">Отсутствие/низкое качество звука</option>
+            <option value="{ Зависание STB }">Зависание STB</option>
+            <option value="{ Самопроизвольное отключение STB }">Самопроизвольное отключение STB</option>
+            <option disabled value="">
+              -= SIP =-
+            </option>
+            <option value="{ Нет входящий или исходящей связи }">Нет входящий или исходящей связи</option>
+            <option value="{ Нет регистрации на ssw }">Нет регистрации на ssw</option>
+            <option value="{ Нет зуммера/при наличии синхронизации }"> Нет зуммера/при наличии
+              синхронизации</option>
+            <option value="{ Плохое качество звука (прерывания, шумы, посторонние звуки) }">Плохое качество
+              звука (прерывания, шумы, посторонние звуки)</option>
+            <option disabled value="">
+              -= Wi-Fi =-
+            </option>
+            <option value="{ Не открываются страницы по Wi-Fi, сессия есть }">Не открываются страницы по
+              Wi-Fi, сессия есть</option>
+            <option value="{ Низкая скорость по Wi-Fi }">Низкая скорость по Wi-Fi</option>
+            <option value="{ Прерывания Wi-Fi }">Прерывания Wi-Fi</option>
+            <option disabled value="">
+              -= DOCSIS =-
+            </option>
+            <option value="{ Сигнал на отводе ТУ, требуется проверка в квартире }">Сигнал на отводе ТУ,
+              требуется проверка в квартире</option>
+            <option value="{ СЭЛС+СТОК }">СЭЛС+СТОК</option>
+            <option value="{ DVB-C Замена ПДУ }">DVB-C замена ПДУ</option>
+            <option disabled value="">
+              -= Клиент=-
+            </option>
+            <option value="{ Выезд по требованию клиента (удерживаемый, скандальный, претензионный) }">
+              Выезд по требованию клиента (удерживаемый, скандальный, претензионный)</option>
+            <option value="{ Выезд с тестовым ПК для демонстрации услуги }">Выезд с тестовым ПК
+              для
+              демонстрации услуги</option>
+            <option value="{ Выезд с тестовым ТА+линейным шнуром  для демонстрации услуги }">Выезд с
+              тестовым ТА+линейным шнуром для демонстрации услуги</option>
+            <option disabled value="">
+              -= Общие =-
+            </option>
+            <option value="{ Продажа оборудования на выезде }">Продажа оборудования на выезде</option>
+            <option value="{ Замена расходников }">Замена расходников</option>
+            <option value="{ Нет синхронизации (индикация есть) }">Нет синхронизации (индикация есть)
+            </option>}
+            <option value="{ Ошибки при инсталляции } ">Ошибки при инсталляции</option>
+            <option value="{ Плохие параметры линии, низкий уровень Rx, ошибки Оптика/LAN }">Плохие
+              параметры линии, низкий уровень Rx, ошибки Оптика/LAN </option>
+            <option value=" { Инсталляция без демонстрации, требуется собрать СП }">Инсталляция без
+              демонстрации, требуется собрать СП </option>
+            <option value="{ Некорректная коммутация на ККМ }">Некорректная коммутация на ККМ </option>
+            <option value="{ Неисправна абонентская трубка/линия }">Неисправна абонентская трубка/линия
+            </option>
+            <option value="{ Неисправна панель }">Неисправна панель</option>
+          </select>
+          <p class="fs-5 rounded p-2 mb-3 mt-5 d-inline-block formplus__annotation">Опции:
+          </p>
+        </div>
+      </div>
+      <!-- VIP клиент и Удерживаемый клиент -->
+      <div class="row justify-content-around mb-4">
+        <div class="col-4 d-flex justify-content-start rounded shadow formplus__col p-2 border-2">
+          <div class="form-check fs-5 w-100">
+            <input class="form-check-input" type="checkbox" value="VIP. " id="vipClient" outputorder="13">
+            <label class="form-check-label w-100" for="vipClient">
+              VIP - клиент
+            </label>
+          </div>
+        </div>
+        <div class="col-4 d-flex justify-content-start rounded shadow formplus__col p-2 border">
+          <div class="form-check fs-5 w-100">
+            <input class="form-check-input" type="checkbox" value="Удерживаемый. " id="heldClient" outputorder="14">
+            <label class="form-check-label w-100" for="heldClient">
+              Удерживаемый клиент
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- СЭЛС и Позвонить заранее -->
+      <div class="row justify-content-around mb-4">
+        <div class="col-4 d-flex justify-content-start shadow rounded formplus__col p-2 border">
+          <div class="form-check fs-5 w-100">
+            <input class="form-check-input" type="checkbox" value="СЭЛС был, сигнал ТУ. " id="sels" outputorder="10">
+            <label class="form-check-label w-100" for="sels">
+              СЭЛС был
+            </label>
+          </div>
+        </div>
+        <div class="col-4 d-flex justify-content-start shadow rounded formplus__col p-2 border">
+          <div class="form-check fs-5 w-100">
+            <input class="form-check-input" type="checkbox" value="Просьба заранее позвонить клиенту. " id="callBefore"
+              outputorder="11">
+            <label class="form-check-label w-100" for="callBefore">
+              Позвонить заранее
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- Согласовать выезд -->
+      <div class="row justify-content-center mb-4">
+        <div class="col-7 d-flex justify-content-start shadow rounded formplus__col p-2 border">
+          <div class="form-check fs-5 w-100">
+            <input class="form-check-input" type="checkbox"
+              value="Примечание: Необходимо дозвониться до клиента, требуется согласовать выезд. " id="moveApproved"
+              outputorder="16">
+            <label class="form-check-label w-100" for="moveApproved">
+              Необходимо дозвониться до клиента, требуется согласовать выезд
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Форма для закрытия заявки -->
+    <div class="container border shadow rounded mb-5 formplus__container p-3 close-form visually-hidden border-2">
+      <!-- 1ЛТП -->
+      <div class="row justify-content-start mb-4">
+        <div class="col-4 d-flex justify-content-start rounded shadow formplus__col p-2 ms-3 border">
+          <div class="form-check fs-5 w-100">
+            <input class="form-check-input" type="checkbox" value="Ошибка 1ЛТП: да." id="1ltpErr" outputorder="1">
+            <label class="form-check-label w-100" for="1ltpErr">
+              Ошибка 1ЛТП
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- Информация об смс -->
+      <div class="row justify-content-start mb-4">
+        <div class="col-4 d-flex justify-content-start rounded shadow formplus__col p-2 ms-3 border">
+          <div class="form-check fs-5 w-100">
+            <input class="form-check-input" type="checkbox" value="Информация об смс предоставлена: да." id="SMSInfo"
+              checked="checked" outputorder="10">
+            <label class="form-check-label w-100" for="SMSInfo">
+              Информация об СМС
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- ПКП -->
+      <div class="row justify-content-start mb-4 double-bottom">
+        <div class="col-4 d-flex justify-content-start rounded shadow formplus__col p-2 ms-3 border">
+          <div class="form-check fs-5 w-100">
+            <input class="form-check-input double-bottom__input" type="checkbox" value="ПКП: " id="NeedPKP"
+              outputorder="2">
+            <label class="form-check-label w-100" for="NeedPKP">
+              ПКП
+            </label>
+          </div>
+        </div>
+        <div class="col-12 visually-hidden">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-2 d-flex align-items-center justify-content-start">
+              <div class="p-2 rounded fs-5 formplus__annotation ">ПКП:
+              </div>
+            </div>
+            <div class="col-9">
+              <select class="form-select shadow fs-5 double-bottom__select" aria-label="PKP option">
+                <option selected value=""></option>
+                <option value="переведен на ПКП">Переведен на ПКП</option>
+                <option value="отказ от перевода на ПКП">Отказ от перевода на ПКП</option>
+                <option value="не предоставляется">Не предоставляется</option>
+              </select>
+            </div>
+            <div class="col-1"><button type="button" class="btn-close double-bottom__close border shadow rounded p-3"
+                aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Выезд -->
+      <div class="row justify-content-start mb-4 double-bottom">
+        <div class="col-4 d-flex justify-content-start rounded shadow formplus__col p-2 ms-3 border">
+          <div class="form-check fs-5 w-100">
+            <input class="form-check-input double-bottom__input" type="checkbox" value="Выезд: " id="NeedMaster"
+              outputorder="9">
+            <label class="form-check-label w-100" for="NeedMaster">
+              Выезд
+            </label>
+          </div>
+        </div>
+        <div class="col-12 visually-hidden">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-2 d-flex align-items-center justify-content-start">
+              <div class="p-2 rounded fs-5 formplus__annotation ">Выезд:
+              </div>
+            </div>
+            <div class="col-9">
+              <select class="form-select shadow fs-5 double-bottom__select" aria-label="Master option">
+                <option selected value=""></option>
+                <option value="не требуется">Не требуется</option>
+                <option value="отказ">Отказ</option>
+                <option value="не знает когда сможет принять">Не знает когда сможет принять</option>
+                <option value="болеет">Болеет</option>
+              </select>
+            </div>
+            <div class="col-1"><button type="button" class="btn-close double-bottom__close border shadow rounded p-3"
+                aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Причина обращения -->
+      <div class="row justify-content-start mb-4">
+        <div class="col-12">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-3 d-flex align-items-center justify-content-start">
+              <div class="p-2 rounded fs-5 formplus__annotation">Причина обращения:</div>
+            </div>
+            <div class="col-8">
+              <select class="form-select shadow fs-5" aria-label="Причина обращения: " outputorder="3">
+                <option selected value=""></option>
+                <option disabled value="">-=Общее=-</option>
+                <option value="Нет синхронизации - индикация есть">Нет синхронизации - индикация есть
+                </option>
+                <option value="Нет синхронизации - нет индикации на CPE">Нет синхронизации - нет
+                  индикации на
+                  CPE
+                </option>
+                <option value="Нестабильная синхронизация">Нестабильная синхронизация</option>
+                <option value="Нет синхронизации - проблема контакта на CPE">Нет синхронизации -
+                  проблема
+                  контакта на
+                  CPE</option>
+                <option value="Нет линка до устройства абонента">Нет линка до устройства абонента
+                </option>
+                <option disabled value="">-=INTERNET=-</option>
+                <option value="Нет сессии">Нет сессии</option>
+                <option value="Есть сессия, нет доступа">Есть сессия, нет доступа</option>
+                <option value="Прерывания сессии">Прерывания сессии</option>
+                <option value="Нет доступа до конкретного ресурса">Нет доступа до конкретного ресурса
+                </option>
+                <option value="Низкая скорость - кабель">Низкая скорость - кабель</option>
+                <option value="Низкая скорость - WiFi">Низкая скорость - WiFi</option>
+                <option value="Нестабильная скорость">Нестабильная скорость</option>
+                <option value="Прерывания по WiFi">Прерывания по WiFi</option>
+                <option value="Прерывания по кабелю">Прерывания по кабелю</option>
+                <option value="Нет сети WiFi в списке доступных">Нет сети WiFi в списке доступных
+                </option>
+                <option value="Не подключиться к точке доступа WiFi">Не подключиться к точке доступа
+                  WiFi
+                </option>
+                <option value="Настройка оборудования WiFi (Пароль, канал...)">Настройка оборудования
+                  WiFi
+                  (Пароль,
+                  канал...)</option>
+                <option value="Некорректная заявка">Некорректная заявка</option>
+                <option value="Статус канала">Статус канала</option>
+                <option value="Низкая скорость - ТП больше 100 Мб/с">Низкая скорость - ТП больше 100
+                  Мб/с
+                </option>
+                <option value="Высокий пинг">Высокий пинг</option>
+                <option value="Смена режима работы ONT">Смена режима работы ONT</option>
+                <option disabled value="">-=VOIP/SIP/MSAN=-</option>
+                <option value="Нет входящей/исходящей связи">Нет входящей/исходящей связи</option>
+                <option value="Нет зуммера">Нет зуммера</option>
+                <option value="Нет выхода на вз/мг/мн/8">Нет выхода на вз/мг/мн/8</option>
+                <option disabled value="">-=IPTV=-</option>
+                <option value="Нет синхронизации - нет индикации на STB">Нет синхронизации - нет
+                  индикации на
+                  STB
+                </option>
+                <option value="Зависания/выключения STB">Зависания/выключения STB</option>
+                <option value="Ошибка загрузки STB">Ошибка загрузки STB</option>
+                <option value="Настройка/неисправность ПДУ">Настройка/неисправность ПДУ</option>
+                <option value="Качество изображения/звука">Качество изображения/звука</option>
+                <option value="Отсутствие изображения, нет мультик��ста">Отсутствие изображения, нет
+                  мультикаста
+                </option>
+                <option value="Нет сигнала, ошибка источника">Нет сигнала, ошибка источника</option>
+                <option value="Нет подписки на канал">Нет подписки на канал</option>
+                <option value="Управление просмотром">Управление просмотром</option>
+                <option value="Настройка профиля, установка PIN">Настройка профиля, установка PIN
+                </option>
+                <option value="Wink, ИТВ2.0, мультискрин">Wink, ИТВ2.0, мультискрин</option>
+                <option disabled value="">-=DVB-C=-</option>
+                <option value="Не доступны каналы">Не доступны каналы</option>
+                <option disabled value="">-=Абонент=-</option>
+                <option value="Абонент хочет подключить доп устройства">Абонент хочет подключить доп
+                  устройства
+                </option>
+                <option value="Обращение с целью консультации">Обращение с целью консультации</option>
+                <option disabled value="">-=Массовые проблемы=-</option>
+                <option value="Кабельное/станционное повреждение">Кабельное/станционное повреждение
+                </option>
+                <option value="Корректировка статусов канала">Корректировка статусов канала</option>
+                <option value="Ошибки билинга">Ошибки билинга</option>
+                <option value="Интеграция со смежными ИС">Интеграция со смежными ИС</option>
+                <option value="Проблема с контентом">Проблема с контентом</option>
+                <option disabled value="">-=Другое=-</option>
+                <option value="ДРУГОЕ">Другое</option>
+              </select>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Проблемная зона -->
+      <div class="row justify-content-start mb-4">
+        <div class="col-12">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-3 d-flex align-items-center justify-content-start">
+              <div class="p-2 rounded fs-5 formplus__annotation">Проблемная зона:</div>
+            </div>
+            <div class="col-8">
+              <select class="form-select shadow fs-5" aria-label="Проблемная зона: " outputorder="4">
+                <option selected value=""></option>
+                <option value="Блок питания STB/CPE">Блок питания STB/CPE</option>
+                <option value="Электропитание в квартире">Электропитание в квартире</option>
+                <option value="Схема подключения/коммутация">Схема подключения/коммутация</option>
+                <option value="Повреждение кабеля (патчкорд)">Повреждение кабеля (патчкорд)</option>
+                <option value="Повреждение кабеля (до CPE)">Повреждение кабеля (до CPE)</option>
+                <option value="Настройки CPE">Настройки CPE</option>
+                <option value="Настройки ПК">Настройки ПК</option>
+                <option value="Настройки STB">Настройки STB</option>
+                <option value="Слабый пользователь">Слабый пользователь</option>
+                <option value="ПО абонента">ПО абонента</option>
+                <option value="Оборудование клиента (ТВ, Роутер...)">Оборудование клиента (ТВ,
+                  Роутер...)</option>
+                <option value="ЗО сторонней организации (хостинга, провайдера и тд)">ЗО сторонней
+                  организации
+                  (хостинга, провайдера и тд.)</option>
+                <option value="WiFi">WiFi</option>
+                <option value="Непригодная линия">Непригодная линия</option>
+                <option value="ДРУГОЕ">ДРУГОЕ</option>
+              </select>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Проблема коммутации через -->
+      <div class="row justify-content-start mb-4">
+        <div class="col-12">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-3 d-flex align-items-center justify-content-start">
+              <div class="p-2 rounded fs-5 formplus__annotation">Проблема коммутации:</div>
+            </div>
+            <div class="col-8">
+              <select class="form-select shadow fs-5" aria-label="Проблема коммутации: " outputorder="5">
+                <option selected value=""></option>
+                <option value="Патчкорд (RJ-45 / Ethernet порт)">Патчкорд (RJ-45 / Ethernet порт)
+                </option>
+                <option value="Кабель до CPE (Оптика/ Dsl /Fttx)">Кабель до CPE (Оптика/ Dsl /Fttx)
+                </option>
+                <option value="WiFi">WiFi</option>
+                <option value="PLC">PLC</option>
+                <option value="OTT">OTT</option>
+                <option disabled value="">-=STB:TV Кабель=-</option>
+                <option value="HDMI">HDMI</option>
+                <option value="Колокольчики(RCA)">Колокольчики(RCA)</option>
+                <option value="SKART">SKART</option>
+                <option value="ДРУГОЕ">ДРУГОЕ</option>
+              </select>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Основное устройство -->
+      <div class="row justify-content-start mb-4">
+        <div class="col-12">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-3 d-flex align-items-center justify-content-start">
+              <div class="p-2 rounded fs-5 formplus__annotation">Основное устройство:</div>
+            </div>
+            <div class="col-8">
+              <select class="form-select shadow fs-5" aria-label="Основное устройство: " outputorder="6">
+                <option selected value=""></option>
+                <option disabled value="">-=MESH системы=-</option>
+                <option value="ZTE Mesh-Wi-Fi ZXHN H196Q">ZTE Mesh-Wi-Fi ZXHN H196Q</option>
+                <option disabled value="">-=Оптические терминалы=-</option>
+                <option value="Eltex NTU-RG-1421G-WZ">Eltex NTU-RG-1421G-WZ</option>
+                <option value="Eltex NTU-RG-1421G-Wac">Eltex NTU-RG-1421G-Wac</option>
+                <option value="Sercomm RV6699">Sercomm RV6699</option>
+                <option value="Sercomm RT-GM-1">Sercomm RT-GM-1</option>
+                <option value="Huawei RT-GM-2">Huawei RT-GM-2</option>
+                <option value="ISKRATEL RT-GM-3">ISKRATEL RT-GM-3</option>
+                <option value="ZTE RT-GM-4">ZTE RT-GM-4</option>
+                <option value="ZTE RT-GM-5">ZTE RT-GM-5</option>
+                <option value="ZTE RT-GM-6">ZTE RT-GM-6</option>
+                <option value="Huawei Game RT-X">Huawei Game RT-X</option>
+                <option value="ZTE F612">ZTE F612</option>
+                <option value="ZTE F670">ZTE F670</option>
+                <option value="Eltex NTU-2V">Eltex NTU-2V</option>
+                <option value="Huawei HG 8120H">Huawei HG 8120H</option>
+                <option value="Huawei HG 8247">Huawei HG 8247</option>
+                <option value="Huawei HG 8245H">Huawei HG 8245H</option>
+                <option value="Huawei HG 8245">Huawei HG 8245</option>
+                <option value="Huawei HG 8240">Huawei HG 8240</option>
+                <option value="Huawei HG 850a">Huawei HG 850a</option>
+                <option value="Huawei HG 850">Huawei HG 850</option>
+                <option value="D-Link DPN R5402">D-Link DPN R5402</option>
+                <option value="D-Link DPN 5402">D-Link DPN 5402</option>
+                <option value="Sagemcom F@st 5650">Sagemcom F@st 5650</option>
+                <option value="ATRON RFT-630">ATRON RFT-630</option>
+                <option disabled value="">-=Роутеры=-</option>
+                <option value="ZTE H298А">ZTE H298А</option>
+                <option value="ZXHN H118N">ZTE ZXHN H118N</option>
+                <option value="Sercomm s1010">Sercomm s1010</option>
+                <option value="Innbox E70">Innbox E70</option>
+                <option value="Innbox E80">Innbox E80</option>
+                <option value="Sagemcom F@st 1744">Sagemcom F@st 1744</option>
+                <option value="D-Link DIR-100">D-Link DIR-100</option>
+                <option value="D-Link DIR-100F">D-Link DIR-100F</option>
+                <option value="D-Link DIR-300">D-Link DIR-300</option>
+                <option value="D-Link DIR-620">D-Link DIR-620</option>
+                <option value="D-Link DIR-850L">D-Link DIR-850L</option>
+                <option value="D-Link DIR-825AC">D-Link DIR-825AC</option>
+                <option disabled value="">-=DSL Модемы=-</option>
+                <option value="QTECH QDSL-1040W v2 ADSL+">QTECH QDSL-1040W v2 ADSL+</option>
+                <option value="ZTE ZXHN H108N">ZTE ZXHN H108N</option>
+                <option value="D-Link DSL-2640">D-Link DSL-2640</option>
+                <option value="D-Link DSL-2500">D-Link DSL-2500</option>
+                <option value="D-Link DVA-3672">D-Link DVA-3672</option>
+                <option value="Sagemcom Fast 1704 RT">Sagemcom Fast 1704 RT</option>
+                <option value="UPVEL UR-344AN4G">UPVEL UR-344AN4G</option>
+                <option value="Huawei HG 532E">Huawei HG 532E</option>
+                <option value="Intercross 5633">Intercross 5633</option>
+                <option value="Sagemcom F@st 2804">Sagemcom F@st 2804</option>
+                <option value="TP-Link&nbsp;TD854W">TP-Link TD854W</option>
+                <option value="Acorp Sprinter W422G AnnexA ">Acorp Sprinter W422G AnnexA
+                </option>
+                <option disabled value="">-=Кабельные модемы=-</option>
+                <option value="Arris CM820S-CE">Arris CM820S-CE</option>
+                <option value="Arris CM900">Arris CM900</option>
+                <option value="Arris CM550B">Arris CM550B </option>
+                <option value="Thomson TCM471">Thomson TCM471 </option>
+                <option value="Huawei CG101002">Huawei CG101002</option>
+                <option value="WebSTAR EPC2100R2">WebSTAR EPC2100R2</option>
+                <option value="Motorolla SB5101E">Motorolla SB5101E</option>
+                <option disabled value="">-=Устройство абонента=-</option>
+                <option value="Устройство абонента">Устройство абонента</option>
+              </select>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Дополнительное устройство -->
+      <div class="row justify-content-start mb-4">
+        <div class="col-12">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-3 d-flex align-items-center justify-content-start">
+              <div class="p-2 rounded fs-5 formplus__annotation">Дополнительное устройство:</div>
+            </div>
+            <div class="col-8">
+              <select class="form-select shadow fs-5" aria-label="Дополнительное устройство: " outputorder="7">
+                <option selected value=""></option>
+                <option disabled value="">-=MESH системы=-</option>
+                <option value="ZTE Mesh-Wi-Fi ZXHN H196Q">ZTE Mesh-Wi-Fi ZXHN H196Q</option>
+                <option disabled value="">-=Wi-Fi Роутер=- </option>
+                <option value="Innbox E70">Innbox E70</option>
+                <option value="Innbox E80">Innbox E80</option>
+                <option value="Sercomm s1010">Sercomm s1010</option>
+                <option value="ZTE ZXHN H118N">ZTE ZXHN H118N</option>
+                <option value="ZTE H298А">ZTE H298А</option>
+                <option value="Sagemcom F@st 1744">Sagemcom F@st 1744</option>
+                <option value="Sagemcom F@st 2804">Sagemcom F@st 2804</option>
+                <option value="D-Link DSL-2640">D-Link DSL-2640</option>
+                <option value="D-Link DIR-300">D-Link DIR-300</option>
+                <option value="D-Link DIR-620">D-Link DIR-620</option>
+                <option value="D-Link DIR-850L">D-Link DIR-850L</option>
+                <option value="D-Link DIR-825AC">D-Link DIR-825AC</option>
+                <option value="Netgear WNR1000">Netgear WNR1000</option>
+                <option value="Netgear WNR3500L">Netgear WNR3500L</option>
+                <option disabled value="">-=Роутер + VOIP=- </option>
+                <option value="D-Link DVG5402SP">D-Link DVG5402SP</option>
+                <option value="D-Link DVG5404">D-Link DVG5004</option>
+                <option value="D-Link DVG5408">D-Link DVG5008</option>
+                <option value="D-Link DVG7111S">D-Link DVG7111S</option>
+                <option value="Eltex 1404">Eltex 1404</option>
+                <option value="Eltex RG-1402G">Eltex RG-1402G</option>
+                <option value="Eltex TAU1">Eltex TAU1</option>
+                <option disabled value="">-=Коммутаторы=-</option>
+                <option value="D-Link DIR-100">D-Link DIR-100</option>
+                <option value="D-Link DIR-100F">D-Link DIR-100F</option>
+                <option value="Tp-link 1005">Tp-link 1005</option>
+                <option disabled value="">-=Устройство абонента=-</option>
+                <option value="Устройство абонента">Устройство абонента</option>
+              </select>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+      </div>
+      <!-- STB -->
+      <div class="row justify-content-start mb-4">
+        <div class="col-12">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-3 d-flex align-items-center justify-content-start">
+              <div class="p-2 rounded fs-5 formplus__annotation">STB:</div>
+            </div>
+            <div class="col-8">
+              <select class="form-select shadow fs-5" aria-label="STB: " outputorder="8">
+                <option selected value=""></option>
+                <option disabled value="">-=IPTV=-</option>
+                <option value="Transervis IPDC603">Transervis IPDC603</option>
+                <option value="SuperWave STB IP6003">SuperWave STB IP6003</option>
+                <option value="ZXV10 B700V7L ZTE">ZXV10 B700V7L ZTE</option>
+                <option value="mag250">mag250</option>
+                <option value="vip19x3">vip19x3</option>
+                <option value="VIP1003G Motorola">VIP1003G Motorola</option>
+                <option value="Hybroad Z123">Hybroad Z123</option>
+                <option value="sml282">sml282</option>
+                <option value="sml482">sml482</option>
+                <option value="SML-5050">SML-5050</option>
+                <option value="sml723">sml723</option>
+                <option value="HD mini">HD mini</option>
+                <option value="ps7105">ps7105</option>
+                <option value="RT STB HD">RT STB HD</option>
+                <option value="yuxing">yuxing</option>
+                <option value="zyxel">zyxel</option>
+                <option value="Switron IPTV-1500 STB">Switron IPTV-1500 STB</option>
+                <option value="WINK+ IP TV Sercomm STB 122A">Wink+ IP TV Sercomm STB 122A</option>
+                <option value="WINK">WINK</option>
+                <option disabled value="">-=DVB-C=-</option>
+                <option value="Mezzo SP1505">Mezzo SP1505</option>
+                <option value="OPTICUM HD XC-02">OPTICUM HD XC-02</option>
+                <option value="Humax CXHD-5151C/RU">Humax CXHD-5151C/RU</option>
+                <option value="KAON KCF-220SCO">KAON KCF-220SCO</option>
+                <option value="KAON KCF-ES270CO">KAON KCF-ES270CO</option>
+                <option value="KAON KSC S 660 HD">KAON KSC S 660 HD</option>
+                <option value="KAON KSC SA700PCO HD">KAON KSC SA700PCO HD</option>
+                <option value="САМ модуль DVB-C: SMIT Conax">Модуль доступа SMIT Conax</option>
+              </select>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Смежная услуга -->
+      <div class="row justify-content-start mb-4">
+        <div class="col-12">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-3 d-flex align-items-center justify-content-start">
+              <div class="p-2 rounded fs-5 formplus__annotation">Смежная услуга:</div>
+            </div>
+            <div class="col-8">
+              <select class="form-select shadow fs-5" aria-label="Смежная услуга: " outputorder="13">
+                <option selected value=""></option>
+                <option value="Диагностика ок / жалоб нет">Диагностика ок / жалоб нет</option>
+                <option value="Диагностика не ок / клиент отказался от диагностики">Диагностика не ок /
+                  клиент отказался от диагностики</option>
+                <option value="Диагностика ок / клиент отказался от диагностики">Диагностика ок / клиент
+                  отказался от диагностики</option>
+                <option value="Моноуслуга">Моноуслуга</option>
+              </select>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Кнопки оформить выезд, закрыть заявку и готово -->
+    <div class="container mb-5">
+      <div class=" row justify-content-center">
+        <div class="col-4 d-flex justify-content-center visually-hidden">
+          <button type="button" class="btn btn-light shadow btn-crm-done w-100 p-3 fs-5">Готово</button>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+          <button type="button" class="btn btn-light shadow btn-crm-move w-100 p-3 fs-5">Оформить
+            выезд</button>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+          <button type="button" class="btn btn-light shadow btn-crm-close w-100 p-3 fs-5">Закрыть
+            заявку</button>
+        </div>
+      </div>
+      <div class="position-fixed bottom-0 end-0 p-3 mb-5" style="z-index: 11">
+        <div id="copyToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">Form+</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Комментарий добавлен в буфер обмена
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container position-absolute top-50 start-0 w-25 blob">
+      <img class="img-fluid blob__item" src="./img/blob1.svg" alt="">
+    </div>
+    <div class="container position-absolute top-0 end-0 w-50 blob">
+      <img class="img-fluid blob__item" src="./img/blob2.svg" alt="">
+    </div>
+  </main>
+  <footer class="bg-light text-center text-lg-start fixed-bottom">
+    <div class=" container-fluid text-center p-1">
+      © 2022 Copyright:
+      <span>None</span>
+    </div>
+  </footer>
+  <script src="./main.js"></script>
+</body>
+
+</html>
